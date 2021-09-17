@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dofepapp-deploy
+  name: dofepapp-deploy2
 spec:
   replicas: 3
   selector:
     matchLabels: 
-      app: dofepapp
+      app: dofepapp2
   minReadySeconds: 10
   strategy:
     type: RollingUpdate
@@ -16,20 +16,20 @@ spec:
   template:
     metadata:
       labels:
-        app: dofepapp
+        app: dofepapp2
     spec:
       containers:
       - name: app-cont
-        image: ggeorgievv96/dofepapp:%IMAGE-PLACEHOLDER%
+        image: ggeorgievv96/dofepapp2:%IMAGE-PLACEHOLDER2%
         ports:
         - containerPort: 80 
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: dofepapp-svc
+  name: dofepapp-svc2
   labels:
-    app: dofepapp
+    app: dofepapp2
 spec:
   type: NodePort
   ports:
@@ -37,4 +37,4 @@ spec:
     nodePort: 31001
     protocol: TCP
   selector:
-    app: dofepapp
+    app: dofepapp2
