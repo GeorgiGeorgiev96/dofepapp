@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - name: app-cont
-        image: ggeorgievv96/dofepapp2:%IMAGE-PLACEHOLDER%
+        image: ggeorgievv96/dofepapp:%IMAGE-PLACEHOLDER%
         ports:
         - containerPort: 80 
 ---
